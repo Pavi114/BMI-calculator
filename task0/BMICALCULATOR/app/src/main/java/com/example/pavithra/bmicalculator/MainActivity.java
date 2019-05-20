@@ -1,7 +1,9 @@
 package com.example.pavithra.bmicalculator;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,17 +32,30 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText Height = (EditText)findViewById(R.id.heightValue);
+                EditText Height = (EditText) findViewById(R.id.heightValue);
                 String hei = Height.getText().toString();
-                heightValue = Float.parseFloat(hei)/100;
 
-                EditText Weight = (EditText)findViewById(R.id.weightValue);
+
+                EditText Weight = (EditText) findViewById(R.id.weightValue);
                 String wei = Weight.getText().toString();
-                weightValue = Integer.parseInt(wei);
 
-                calcBMI();
 
-                displayBmi();
+                if(!(wei.matches("") || hei.matches(""))){
+                    heightValue = Float.parseFloat(hei) / 100;
+                    weightValue = Integer.parseInt(wei);
+                    if (heightValue > 0 && weightValue > 0) {
+                        calcBMI();
+                        displayBmi();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Enter Values More Than Zero", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+
+                   Toast.makeText(getApplicationContext(), "Please Enter Values", Toast.LENGTH_SHORT).show();
+                 }
+
 
             }
         });
