@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/first"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background= "@drawable/bmibg"
+    tools:context=".MainActivity">
+   <LinearLayout
+       android:id="@+id/intro"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="20dp"
+       android:layout_centerVertical="true"
+       android:orientation="vertical">
+
+       <LinearLayout
+           android:id="@+id/height"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:background="@drawable/rounded_bg"
+           android:orientation="vertical">
+
+           <TextView
+               android:id="@+id/heightText"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_margin="5dp"
+               android:background="#FFFFA3"
+               android:text="@string/height_in_cm"
+               android:textSize="20dp"
+               android:textAlignment="center" />
+
+           <EditText
+               android:id="@+id/heightValue"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:inputType="number" />
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/weight"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:background="@drawable/rounded_bg"
+           android:orientation="vertical">
+
+           <TextView
+               android:id="@+id/weightText"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_margin="5dp"
+               android:text="@string/weight_in_kgs"
+               android:background="#FFFFA3"
+               android:textAlignment="center"
+               android:textSize="20dp"/>
+
+           <EditText
+               android:id="@+id/weightValue"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:inputType="number"/>
+
+       </LinearLayout>
+
+       <Button
+           android:id="@+id/submit"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/rounded_bg"
+           android:layout_margin="5dp"
+           android:padding="5dp"
+           android:text="@string/calculate_bmi"
+
+           />
+
+   </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="50dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/bmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/rounded_bg"
+            android:textSize="30dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            />
+
+
+        <TextView
+            android:id="@+id/inference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:background="@drawable/rounded_bg"
+
+            />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
+            android:layout_margin="10dp"
+            android:text="@string/clear"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+
